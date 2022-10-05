@@ -1,0 +1,82 @@
+{
+    "name": "@authelion/vue",
+    "version": "0.3.2",
+    "description": "This package contains auth related vue components.",
+    "main": "dist/index.ssr.js",
+    "browser": "dist/index.esm.js",
+    "module": "dist/index.esm.js",
+    "unpkg": "dist/index.min.js",
+    "types": "dist/types/index.d.ts",
+    "files": [
+        "dist/"
+    ],
+    "scripts": {
+        "build": "rm -rf ./dist && cross-env NODE_ENV=production rollup --config rollup.config.js",
+        "build:watch": "npm run build -- --watch"
+    },
+    "keywords": [
+        "auth",
+        "module",
+        "typescript",
+        "template",
+        "auth-template",
+        "vue",
+        "list",
+        "form",
+        "oauth2",
+        "oauth2-client",
+        "domains",
+        "components"
+    ],
+    "author": {
+        "name": "Peter Placzek",
+        "email": "contact@tada5hi.net",
+        "url": "https://github.com/tada5hi"
+    },
+    "license": "MIT",
+    "devDependencies": {
+        "@authelion/common": "^0.3.1",
+        "@babel/core": "^7.19.1",
+        "@babel/preset-env": "^7.19.1",
+        "@babel/preset-typescript": "^7.18.6",
+        "@fortawesome/fontawesome-free": "^6.2.0",
+        "@rollup/plugin-alias": "^3.1.2",
+        "@rollup/plugin-babel": "^5.3.1",
+        "@rollup/plugin-commonjs": "^22.0.2",
+        "@rollup/plugin-json": "^4.1.0",
+        "@rollup/plugin-node-resolve": "^14.0.1",
+        "@rollup/plugin-replace": "^4.0.0",
+        "@types/node": "^18.7.18",
+        "@types/vuelidate": "^0.7.15",
+        "@zerollup/ts-transform-paths": "^1.7.18",
+        "bootstrap-vue": "^2.22.0",
+        "cross-env": "^7.0.3",
+        "ilingo": "^2.0.4",
+        "np": "^7.6.2",
+        "rapiq": "^0.0.4",
+        "rimraf": "^3.0.2",
+        "rollup": "^2.79.0",
+        "rollup-plugin-includepaths": "^0.2.4",
+        "rollup-plugin-postcss": "^4.0.2",
+        "rollup-plugin-styles": "^4.0.0",
+        "rollup-plugin-typescript2": "^0.33.0",
+        "rollup-plugin-vue": "^6.0.0",
+        "rollup-plugin-vue2": "^0.8.1",
+        "ttypescript": "^1.5.13",
+        "vue": "^2.7.4",
+        "vuelidate": "^0.7.7"
+    },
+    "dependencies": {
+        "@vue-layout/utils": "^1.3.15",
+        "nanoid": "^3.3.4",
+        "regenerator-runtime": "^0.13.9"
+    },
+    "peerDependencies": {
+        "@authelion/common": "^0.x",
+        "bootstrap-vue": "^2.x",
+        "ilingo": "^2.x",
+        "rapiq": "^0.x",
+        "vue": "^2.x",
+        "vuelidate": "^0.x"
+    }
+}
