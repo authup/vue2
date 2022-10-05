@@ -12,7 +12,8 @@
     ],
     "scripts": {
         "build": "rm -rf ./dist && cross-env NODE_ENV=production rollup --config rollup.config.js",
-        "build:watch": "npm run build -- --watch"
+        "build:watch": "npm run build -- --watch",
+        "test": ""
     },
     "keywords": [
         "auth",
