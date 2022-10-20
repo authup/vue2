@@ -298,40 +298,35 @@ Properties
                 staticClass: 'row',
             },
             [
-                h('div', {
-                    staticClass: 'col',
-                }, [
-                    h('h6', [
-                        h('i', { staticClass: 'fa-solid fa-key' }),
-                        ' ',
-                        'Token',
-                    ]),
-                    buildFormInput(vm, h, {
-                        validationTranslator: buildVuelidateTranslator(vm.translatorLocale),
-                        title: 'Endpoint',
-                        propName: 'token_url',
-                        attrs: {
-                            placeholder: 'https://...',
-                        },
-                    }),
+                h('h6', [
+                    h('i', { staticClass: 'fa-solid fa-key' }),
+                    ' ',
+                    'Token',
                 ]),
-                h('div', {
-                    staticClass: 'col',
-                }, [
-                    h('h6', [
-                        h('i', { staticClass: 'fa-solid fa-vihara' }),
-                        ' ',
-                        'Authorization',
-                    ]),
-                    buildFormInput(vm, h, {
-                        validationTranslator: buildVuelidateTranslator(vm.translatorLocale),
-                        title: 'Endpoint',
-                        propName: 'authorize_url',
-                        attrs: {
-                            placeholder: vm.$v.form.token_url.$model || 'https://...',
-                        },
-                    }),
+                buildFormInput(vm, h, {
+                    validationTranslator: buildVuelidateTranslator(vm.translatorLocale),
+                    title: 'Endpoint',
+                    propName: 'token_url',
+                    attrs: {
+                        placeholder: 'https://...',
+                    },
+                }),
+
+                h('hr'),
+
+                h('h6', [
+                    h('i', { staticClass: 'fa-solid fa-vihara' }),
+                    ' ',
+                    'Authorization',
                 ]),
+                buildFormInput(vm, h, {
+                    validationTranslator: buildVuelidateTranslator(vm.translatorLocale),
+                    title: 'Endpoint',
+                    propName: 'authorize_url',
+                    attrs: {
+                        placeholder: 'https://...',
+                    },
+                }),
             ],
         );
 

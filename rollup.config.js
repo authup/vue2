@@ -111,7 +111,7 @@ const esConfig = {
             typescript: typescriptTransformer,
             useTsconfigDeclarationDir: true,
             emitDeclarationOnly: true,
-            tsconfig: 'tsconfig.build.json',
+            tsconfig: 'tsconfig.json',
         }),
         babel({
             ...baseConfig.plugins.babel,
