@@ -13,7 +13,8 @@
     "scripts": {
         "build": "rm -rf ./dist && cross-env NODE_ENV=production rollup --config rollup.config.js",
         "build:watch": "npm run build -- --watch",
-        "test": ""
+        "test": "",
+        "prepublishOnly": "npm run build"
     },
     "keywords": [
         "auth",
@@ -45,7 +46,7 @@
         "@rollup/plugin-babel": "^6.0.2",
         "@rollup/plugin-commonjs": "^22.0.2",
         "@rollup/plugin-json": "^4.1.0",
-        "@rollup/plugin-node-resolve": "^14.0.1",
+        "@rollup/plugin-node-resolve": "^15.0.1",
         "@rollup/plugin-replace": "^5.0.1",
         "@tada5hi/eslint-config-vue-typescript": "^1.0.8",
         "@types/node": "^18.7.18",
@@ -56,7 +57,7 @@
         "eslint": "^8.24.0",
         "ilingo": "^2.0.4",
         "np": "^7.6.2",
-        "rapiq": "^0.2.4",
+        "rapiq": "^0.3.0",
         "rimraf": "^3.0.2",
         "rollup": "^2.79.0",
         "rollup-plugin-includepaths": "^0.2.4",
@@ -79,7 +80,7 @@
         "@authelion/common": "^0.x",
         "bootstrap-vue": "^2.x",
         "ilingo": "^2.x",
-        "rapiq": "^0.x",
+        "rapiq": ">=0.3.0 <1.0.0",
         "vue": "^2.x",
         "vuelidate": "^0.x"
     }
