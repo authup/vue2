@@ -42,7 +42,7 @@
         "@babel/preset-env": "^7.19.1",
         "@babel/preset-typescript": "^7.18.6",
         "@fortawesome/fontawesome-free": "^6.2.0",
-        "@rollup/plugin-alias": "^3.1.2",
+        "@rollup/plugin-alias": "^4.0.2",
         "@rollup/plugin-babel": "^6.0.2",
         "@rollup/plugin-commonjs": "^23.0.2",
         "@rollup/plugin-json": "^4.1.0",
