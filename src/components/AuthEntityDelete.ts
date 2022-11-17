@@ -5,11 +5,12 @@
  * view the LICENSE file that was distributed with this source code.
  */
 
+import { merge } from 'smob';
 import Vue, {
     CreateElement, PropType, VNode, VNodeData,
 } from 'vue';
 import { BvMsgBoxData, BvMsgBoxOptions } from 'bootstrap-vue';
-import { mergeDeep, useHTTPClientAPI } from '@authelion/common';
+import { useHTTPClientAPI } from '@authelion/common';
 import { useHTTPClient } from '../utils';
 import { useAuthIlingo } from '../language/singleton';
 
@@ -104,7 +105,7 @@ AuthEntityDeleteProperties
                 [hint],
             );
 
-            const confirmModal : Promise<BvMsgBoxData> = this.$bvModal.msgBoxConfirm(message, mergeDeep(
+            const confirmModal : Promise<BvMsgBoxData> = this.$bvModal.msgBoxConfirm(message, merge(
                 {
                     size: 'md',
                     buttonSize: 'xs',
@@ -168,7 +169,7 @@ AuthEntityDeleteProperties
 
         return h(
             tag,
-            mergeDeep({
+            merge({
                 domProps: {
                     disabled: vm.busy,
                 },

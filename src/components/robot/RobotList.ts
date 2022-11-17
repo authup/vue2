@@ -5,9 +5,10 @@
  * view the LICENSE file that was distributed with this source code.
  */
 
+import { merge } from 'smob';
 import Vue, { CreateElement, PropType, VNode } from 'vue';
 import { BuildInput } from 'rapiq';
-import { Robot, mergeDeep } from '@authelion/common';
+import { Robot } from '@authelion/common';
 import {
     ComponentListData,
     ComponentListHandlerMethodOptions,
@@ -102,7 +103,7 @@ ComponentListProperties<BuildInput<Robot>>
             this.busy = true;
 
             try {
-                const response = await useHTTPClient().robot.getMany(mergeDeep({
+                const response = await useHTTPClient().robot.getMany(merge({
                     page: {
                         limit: this.meta.limit,
                         offset: this.meta.offset,

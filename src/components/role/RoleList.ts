@@ -5,9 +5,10 @@
  * view the LICENSE file that was distributed with this source code.
  */
 
+import { merge } from 'smob';
 import Vue, { CreateElement, PropType, VNode } from 'vue';
 import { BuildInput } from 'rapiq';
-import { Role, mergeDeep } from '@authelion/common';
+import { Role } from '@authelion/common';
 import {
     ComponentListData,
     ComponentListHandlerMethodOptions,
@@ -102,7 +103,7 @@ ComponentListProperties<BuildInput<Role>>
             this.busy = true;
 
             try {
-                const response = await useHTTPClient().role.getMany(mergeDeep({
+                const response = await useHTTPClient().role.getMany(merge({
                     page: {
                         limit: this.meta.limit,
                         offset: this.meta.offset,

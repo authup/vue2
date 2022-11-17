@@ -19,7 +19,9 @@
 
         "declaration": true,
         "declarationDir": "dist/types",
-        "isolatedModules": true
+        "isolatedModules": true,
+
+        "moduleResolution": "node"
     },
     "exclude": [
         "node_modules",

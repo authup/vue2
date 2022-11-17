@@ -5,8 +5,9 @@
  * view the LICENSE file that was distributed with this source code.
  */
 
+import { merge } from 'smob';
 import Vue, { CreateElement, PropType, VNode } from 'vue';
-import { Realm, mergeDeep } from '@authelion/common';
+import { Realm } from '@authelion/common';
 import { BuildInput } from 'rapiq';
 import {
     ComponentListData,
@@ -101,7 +102,7 @@ ComponentListProperties<BuildInput<Realm>>
             this.busy = true;
 
             try {
-                const response = await useHTTPClient().realm.getMany(mergeDeep({
+                const response = await useHTTPClient().realm.getMany(merge({
                     page: {
                         limit: this.meta.limit,
                         offset: this.meta.offset,

@@ -5,11 +5,12 @@
  * view the LICENSE file that was distributed with this source code.
  */
 
+import { merge } from 'smob';
 import Vue, {
     CreateElement, PropType, VNode,
 } from 'vue';
 import { BuildInput } from 'rapiq';
-import { User, mergeDeep } from '@authelion/common';
+import { User } from '@authelion/common';
 import {
     ComponentListData,
     ComponentListHandlerMethodOptions,
@@ -103,7 +104,7 @@ ComponentListProperties<BuildInput<User>>
             this.busy = true;
 
             try {
-                const response = await useHTTPClient().user.getMany(mergeDeep({
+                const response = await useHTTPClient().user.getMany(merge({
                     include: {
                         realm: true,
                     },

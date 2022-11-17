@@ -5,9 +5,10 @@
  * view the LICENSE file that was distributed with this source code.
  */
 
+import { merge } from 'smob';
 import Vue, { CreateElement, PropType, VNode } from 'vue';
 import { BuildInput } from 'rapiq';
-import { IdentityProvider, OAuth2IdentityProvider, mergeDeep } from '@authelion/common';
+import { IdentityProvider, OAuth2IdentityProvider } from '@authelion/common';
 import {
     ComponentListData,
     ComponentListHandlerMethodOptions,
@@ -112,7 +113,7 @@ Properties
             this.busy = true;
 
             try {
-                const response = await useHTTPClient().identityProvider.getMany(mergeDeep({
+                const response = await useHTTPClient().identityProvider.getMany(merge({
                     page: {
                         limit: this.meta.limit,
                         offset: this.meta.offset,

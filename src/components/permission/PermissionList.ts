@@ -4,8 +4,9 @@
  * For the full copyright and license information,
  * view the LICENSE file that was distributed with this source code.
  */
+import { merge } from 'smob';
 import Vue, { CreateElement, PropType, VNode } from 'vue';
-import { Permission, mergeDeep } from '@authelion/common';
+import { Permission } from '@authelion/common';
 import { BuildInput } from 'rapiq';
 import {
     ComponentListData,
@@ -102,7 +103,7 @@ ComponentListProperties<BuildInput<Permission>>
             this.busy = true;
 
             try {
-                const response = await useHTTPClient().permission.getMany(mergeDeep({
+                const response = await useHTTPClient().permission.getMany(merge({
                     page: {
                         limit: this.meta.limit,
                         offset: this.meta.offset,
