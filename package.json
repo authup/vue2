@@ -37,7 +37,7 @@
     },
     "license": "MIT",
     "devDependencies": {
-        "@authelion/common": "^0.3.12",
+        "@authelion/common": "^0.4.1",
         "@babel/core": "^7.19.1",
         "@babel/preset-env": "^7.20.2",
         "@babel/preset-typescript": "^7.18.6",
