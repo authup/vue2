@@ -78,7 +78,7 @@
         "smob": "^0.0.6"
     },
     "peerDependencies": {
-        "@authelion/common": ">=0.3.0 <1.0.0",
+        "@authup/common": ">=0.1.0 <1.0.0",
         "bootstrap-vue": "^2.x",
         "ilingo": "^2.x",
         "rapiq": ">=0.4.1 <1.0.0",
