@@ -6,7 +6,7 @@
  */
 
 import Vue, { CreateElement, VNode } from 'vue';
-import { Robot } from '@authelion/common';
+import { Robot } from '@authup/common';
 import { SlotName } from '@vue-layout/utils';
 import {
     RobotPermissionAssignmentListItemActions,

@@ -10,7 +10,7 @@ import Vue, {
     CreateElement, PropType, VNode, VNodeData,
 } from 'vue';
 import { BvMsgBoxData, BvMsgBoxOptions } from 'bootstrap-vue';
-import { useHTTPClientAPI } from '@authelion/common';
+import { useHTTPClientAPI } from '@authup/common';
 import { useHTTPClient } from '../utils';
 import { useAuthIlingo } from '../language/singleton';
 

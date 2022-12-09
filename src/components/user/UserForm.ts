@@ -12,7 +12,7 @@ import Vue, {
     CreateElement, PropType, VNode, VNodeData,
 } from 'vue';
 
-import { Realm, User } from '@authelion/common';
+import { Realm, User } from '@authup/common';
 import {
     ComponentFormData, ComponentFormMethods,
     ComponentListItemSlotProps, SlotName, buildFormInput, buildFormSubmit, buildListItemToggleAction,

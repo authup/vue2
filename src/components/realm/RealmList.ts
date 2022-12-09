@@ -7,7 +7,7 @@
 
 import { merge } from 'smob';
 import Vue, { CreateElement, PropType, VNode } from 'vue';
-import { Realm } from '@authelion/common';
+import { Realm } from '@authup/common';
 import { BuildInput } from 'rapiq';
 import {
     ComponentListData,

@@ -8,7 +8,7 @@
 import { merge } from 'smob';
 import Vue, { CreateElement, PropType, VNode } from 'vue';
 import { BuildInput } from 'rapiq';
-import { IdentityProvider, OAuth2IdentityProvider } from '@authelion/common';
+import { IdentityProvider, OAuth2IdentityProvider } from '@authup/common';
 import {
     ComponentListData,
     ComponentListHandlerMethodOptions,

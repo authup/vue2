@@ -10,7 +10,7 @@ import Vue, {
     CreateElement, PropType, VNode,
 } from 'vue';
 import { BuildInput } from 'rapiq';
-import { User } from '@authelion/common';
+import { User } from '@authup/common';
 import {
     ComponentListData,
     ComponentListHandlerMethodOptions,

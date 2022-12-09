@@ -8,7 +8,7 @@ import {
     maxLength, minLength, required,
 } from 'vuelidate/lib/validators';
 import Vue, { CreateElement, PropType, VNode } from 'vue';
-import { Realm, createNanoID } from '@authelion/common';
+import { Realm, createNanoID } from '@authup/common';
 import {
     ComponentFormData,
     buildFormInput,

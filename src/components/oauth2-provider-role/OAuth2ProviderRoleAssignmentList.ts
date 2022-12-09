@@ -6,7 +6,7 @@
  */
 
 import Vue, { CreateElement, VNode } from 'vue';
-import { Role } from '@authelion/common';
+import { Role } from '@authup/common';
 import { SlotName } from '@vue-layout/utils';
 import { OAuth2ProviderRoleAssignmentListItem, OAuth2ProviderRoleListItemProperties } from './OAuth2ProviderRoleAssignmentListItem';
 import { RoleList } from '../role';

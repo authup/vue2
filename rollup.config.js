@@ -19,7 +19,7 @@ const includePathOptions = {
         vue: 'node_modules/vue/dist/vue.common.js',
     },
     external: [
-        '@authelion/common',
+        '@authup/common',
         'ilingo',
         'rapiq',
         'vue',
@@ -68,7 +68,7 @@ const baseConfig = {
 const external = [
     // list external dependencies, exactly the way it is written in the import statement.
     // eg. 'jquery'
-    '@authelion/common',
+    '@authup/common',
     'ilingo',
     'rapiq',
     'vue',

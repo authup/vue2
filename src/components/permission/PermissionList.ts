@@ -6,7 +6,7 @@
  */
 import { merge } from 'smob';
 import Vue, { CreateElement, PropType, VNode } from 'vue';
-import { Permission } from '@authelion/common';
+import { Permission } from '@authup/common';
 import { BuildInput } from 'rapiq';
 import {
     ComponentListData,

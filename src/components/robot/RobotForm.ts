@@ -11,7 +11,7 @@ import Vue, {
 import {
     maxLength, minLength, required,
 } from 'vuelidate/lib/validators';
-import { Realm, Robot, createNanoID } from '@authelion/common';
+import { Realm, Robot, createNanoID } from '@authup/common';
 import {
     ComponentFormData, ComponentListItemSlotProps, SlotName, buildFormInput, buildFormSubmit, buildListItemToggleAction,
 } from '@vue-layout/utils';

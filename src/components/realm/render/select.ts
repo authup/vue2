@@ -6,7 +6,7 @@
  */
 
 import { CreateElement, VNode } from 'vue';
-import { Realm } from '@authelion/common';
+import { Realm } from '@authup/common';
 import {
     ComponentFormComputed,
     ComponentFormData, ComponentFormMethods, ComponentFormVuelidate, ComponentListData,

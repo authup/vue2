@@ -6,7 +6,7 @@
  */
 
 import Vue, { CreateElement, PropType, VNode } from 'vue';
-import { RolePermission } from '@authelion/common';
+import { RolePermission } from '@authup/common';
 import { ComponentListItemData } from '@vue-layout/utils';
 import { useHTTPClient } from '../../utils';
 

@@ -8,7 +8,7 @@
 import { merge } from 'smob';
 import Vue, { CreateElement, PropType, VNode } from 'vue';
 import { BuildInput } from 'rapiq';
-import { Robot } from '@authelion/common';
+import { Robot } from '@authup/common';
 import {
     ComponentListData,
     ComponentListHandlerMethodOptions,

@@ -9,7 +9,7 @@ import Vue, {
     CreateElement, PropType, VNode, VNodeData,
 } from 'vue';
 import { maxLength, minLength, required } from 'vuelidate/lib/validators';
-import { IdentityProviderProtocol, OAuth2IdentityProvider, createNanoID } from '@authelion/common';
+import { IdentityProviderProtocol, OAuth2IdentityProvider, createNanoID } from '@authup/common';
 import {
     ComponentFormData,
     ComponentFormMethods,
