@@ -1,6 +1,6 @@
 {
     "name": "@authup/vue2",
-    "version": "0.1.0",
+    "version": "0.2.0",
     "description": "This package contains auth related vue components.",
     "main": "dist/index.ssr.js",
     "browser": "dist/index.esm.js",
