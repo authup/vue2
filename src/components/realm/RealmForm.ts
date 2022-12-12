@@ -8,14 +8,14 @@ import {
     maxLength, minLength, required,
 } from 'vuelidate/lib/validators';
 import Vue, { CreateElement, PropType, VNode } from 'vue';
-import { Realm, createNanoID } from '@authup/common';
+import { MASTER_REALM_NAME, Realm, createNanoID } from '@authup/common';
 import {
     ComponentFormData,
     buildFormInput,
     buildFormSubmit,
     buildFormTextarea,
 } from '@vue-layout/utils';
-import { alphaNumHyphenUnderscore, initPropertiesFromSource, useHTTPClient } from '../../utils';
+import { alphaWithUpperNumHyphenUnderScore, initPropertiesFromSource, useHTTPClient } from '../../utils';
 import { useAuthIlingo } from '../../language/singleton';
 import { buildVuelidateTranslator } from '../../language/utils';
 
@@ -45,7 +45,6 @@ Properties
     data() {
         return {
             form: {
-                id: '',
                 name: '',
                 description: '',
             },
@@ -56,16 +55,11 @@ Properties
     },
     validations: {
         form: {
-            id: {
-                required,
-                alphaNumHyphenUnderscore,
-                minLength: minLength(3),
-                maxLength: maxLength(36),
-            },
             name: {
+                alphaWithUpperNumHyphenUnderScore,
                 required,
-                minLength: minLength(5),
-                maxLength: maxLength(100),
+                minLength: minLength(3),
+                maxLength: maxLength(128),
             },
             description: {
                 minLength: minLength(5),
@@ -78,8 +72,8 @@ Properties
             return this.entity &&
                 Object.prototype.hasOwnProperty.call(this.entity, 'id');
         },
-        isIDEmpty() {
-            return !this.form.id || this.form.id.length === 0;
+        isNameEmpty() {
+            return !this.form.name || this.form.name.length === 0;
         },
         updatedAt() {
             return this.entity ? this.entity.updated_at : undefined;
@@ -101,8 +95,8 @@ Properties
                 initPropertiesFromSource<Realm>(this.entity, this.form);
             }
 
-            if (this.form.id.length === 0) {
-                this.generateID();
+            if (this.form.name.length === 0) {
+                this.generateName();
             }
         },
         async submit() {
@@ -132,43 +126,43 @@ Properties
             this.busy = false;
         },
 
-        generateID() {
-            this.form.id = createNanoID();
+        generateName() {
+            this.form.name = createNanoID();
         },
     },
     render(createElement: CreateElement): VNode {
         const vm = this;
         const h = createElement;
 
-        const id = buildFormInput<Realm>(this, h, {
+        const name = buildFormInput<Realm>(this, h, {
             validationTranslator: buildVuelidateTranslator(vm.translatorLocale),
-            title: 'ID',
-            propName: 'id',
+            title: 'Name',
+            propName: 'name',
             domProps: {
-                disabled: vm.isEditing,
+                disabled: vm.entity && vm.entity.name === MASTER_REALM_NAME,
             },
             attrs: {
-                disabled: vm.isEditing,
+                disabled: vm.entity && vm.entity.name === MASTER_REALM_NAME,
             },
         });
 
-        let idHint = h();
+        let nameHint = h();
 
         if (!this.isEditing) {
-            idHint = h('div', {
+            nameHint = h('div', {
                 staticClass: 'mb-3',
             }, [
                 h('button', {
                     staticClass: 'btn btn-xs',
                     class: {
-                        'btn-dark': this.isIDEmpty,
-                        'btn-warning': !this.isIDEmpty,
+                        'btn-dark': this.isNameEmpty,
+                        'btn-warning': !this.isNameEmpty,
                     },
                     on: {
                         click($event: any) {
                             $event.preventDefault();
 
-                            vm.generateID.call(null);
+                            vm.generateName.call(null);
                         },
                     },
                 }, [
@@ -178,12 +172,6 @@ Properties
                 ]),
             ]);
         }
-
-        const name = buildFormInput<Realm>(this, h, {
-            validationTranslator: buildVuelidateTranslator(vm.translatorLocale),
-            title: 'Name',
-            propName: 'name',
-        });
 
         const description = buildFormTextarea<Realm>(this, h, {
             validationTranslator: buildVuelidateTranslator(vm.translatorLocale),
@@ -208,10 +196,8 @@ Properties
                 },
             },
         }, [
-            id,
-            idHint,
-            h('hr'),
             name,
+            nameHint,
             h('hr'),
             description,
             h('hr'),
