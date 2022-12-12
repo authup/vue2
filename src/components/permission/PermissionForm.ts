@@ -8,9 +8,10 @@
 import Vue, { CreateElement, PropType, VNode } from 'vue';
 import { maxLength, minLength, required } from 'vuelidate/lib/validators';
 import { Permission } from '@authup/common';
-import { ComponentFormData, buildFormInput, buildFormSubmit } from '@vue-layout/utils';
-import { useHTTPClient } from '../../utils';
-import { initPropertiesFromSource } from '../../utils/proprety';
+import {
+    ComponentFormData, buildFormInput, buildFormSubmit, buildFormTextarea,
+} from '@vue-layout/utils';
+import { initPropertiesFromSource, useHTTPClient } from '../../utils';
 import { useAuthIlingo } from '../../language/singleton';
 import { buildVuelidateTranslator } from '../../language/utils';
 
@@ -36,7 +37,8 @@ export const PermissionForm = Vue.extend<ComponentFormData<Permission>, any, any
     data() {
         return {
             form: {
-                id: '',
+                name: '',
+                description: '',
             },
 
             busy: false,
@@ -44,10 +46,14 @@ export const PermissionForm = Vue.extend<ComponentFormData<Permission>, any, any
     },
     validations: {
         form: {
-            id: {
+            name: {
                 required,
                 minLength: minLength(3),
-                maxLength: maxLength(30),
+                maxLength: maxLength(128),
+            },
+            description: {
+                minLength: minLength(3),
+                maxLength: maxLength(4096),
             },
         },
     },
@@ -108,10 +114,16 @@ export const PermissionForm = Vue.extend<ComponentFormData<Permission>, any, any
         const vm = this;
         const h = createElement;
 
-        const id = buildFormInput(this, h, {
+        const name = buildFormInput(this, h, {
             validationTranslator: buildVuelidateTranslator(vm.translatorLocale),
-            title: 'ID',
-            propName: 'id',
+            title: 'Name',
+            propName: 'name',
+        });
+
+        const description = buildFormTextarea(this, h, {
+            validationTranslator: buildVuelidateTranslator(vm.translatorLocale),
+            title: 'Description',
+            propName: 'description',
         });
 
         const submit = buildFormSubmit(this, h, {
@@ -128,7 +140,8 @@ export const PermissionForm = Vue.extend<ComponentFormData<Permission>, any, any
                 },
             },
         }, [
-            id,
+            name,
+            description,
             submit,
         ]);
     },

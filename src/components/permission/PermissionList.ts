@@ -109,10 +109,10 @@ ComponentListProperties<BuildInput<Permission>>
                         offset: this.meta.offset,
                     },
                     filter: {
-                        id: this.q.length > 0 ? `~${this.q}` : this.q,
+                        name: this.q.length > 0 ? `~${this.q}` : this.q,
                     },
                     sort: {
-                        id: 'ASC',
+                        name: 'ASC',
                     },
                 }, this.query));
 
