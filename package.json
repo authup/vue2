@@ -54,7 +54,7 @@
         "@zerollup/ts-transform-paths": "^1.7.18",
         "bootstrap-vue": "^2.22.0",
         "cross-env": "^7.0.3",
-        "eslint": "^8.29.0",
+        "eslint": "^8.30.0",
         "ilingo": "^2.0.4",
         "np": "^7.6.2",
         "rapiq": "^0.6.1",
