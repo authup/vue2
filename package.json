@@ -47,7 +47,7 @@
         "@rollup/plugin-commonjs": "^24.0.0",
         "@rollup/plugin-json": "^5.0.2",
         "@rollup/plugin-node-resolve": "^15.0.1",
-        "@rollup/plugin-replace": "^5.0.1",
+        "@rollup/plugin-replace": "^5.0.2",
         "@tada5hi/eslint-config-vue-typescript": "^1.0.10",
         "@types/node": "^18.11.13",
         "@types/vuelidate": "^0.7.15",
