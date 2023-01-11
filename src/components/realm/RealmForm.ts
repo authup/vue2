@@ -8,7 +8,7 @@ import {
     maxLength, minLength, required,
 } from 'vuelidate/lib/validators';
 import Vue, { CreateElement, PropType, VNode } from 'vue';
-import { MASTER_REALM_NAME, Realm, createNanoID } from '@authup/common';
+import { REALM_MASTER_NAME, Realm, createNanoID } from '@authup/common';
 import {
     ComponentFormData,
     buildFormInput,
@@ -139,10 +139,10 @@ Properties
             title: 'Name',
             propName: 'name',
             domProps: {
-                disabled: vm.entity && vm.entity.name === MASTER_REALM_NAME,
+                disabled: vm.entity && vm.entity.name === REALM_MASTER_NAME,
             },
             attrs: {
-                disabled: vm.entity && vm.entity.name === MASTER_REALM_NAME,
+                disabled: vm.entity && vm.entity.name === REALM_MASTER_NAME,
             },
         });
 
