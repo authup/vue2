@@ -92,7 +92,7 @@ const esConfig = {
     input: 'src/index.ts',
     external,
     output: {
-        file: 'dist/index.esm.js',
+        file: 'dist/index.mjs',
         format: 'esm',
         exports: 'named',
         assetFileNames: '[name]-[hash][extname]',
@@ -132,9 +132,8 @@ const umdConfig = {
     external,
     output: {
         compact: true,
-        file: 'dist/index.ssr.js',
+        file: 'dist/index.cjs',
         format: 'cjs',
-        name: 'TypescriptAuth',
         exports: 'auto',
         assetFileNames: '[name]-[hash][extname]',
         globals,
