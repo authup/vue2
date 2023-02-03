@@ -160,7 +160,7 @@ ComponentListProperties<BuildInput<Permission>>
     render(createElement: CreateElement): VNode {
         const header = buildListHeader(this, createElement, { titleText: 'Permissions', iconClass: 'fa-solid fa-key' });
         const search = buildListSearch(this, createElement);
-        const items = buildListItems(this, createElement, { itemIconClass: 'fa-solid fa-key', itemTextPropName: 'id' });
+        const items = buildListItems(this, createElement, { itemIconClass: 'fa-solid fa-key', itemTextPropName: 'name' });
         const noMore = buildListNoMore(this, createElement, {
             text: 'No more permissions available...',
         });
