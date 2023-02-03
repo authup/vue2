@@ -62,7 +62,7 @@
         "eslint": "^8.32.0",
         "ilingo": "^2.0.4",
         "np": "^7.6.3",
-        "rapiq": "^0.6.6",
+        "rapiq": "^0.7.0",
         "rimraf": "^4.1.2",
         "rollup": "^2.79.0",
         "rollup-plugin-includepaths": "^0.2.4",
