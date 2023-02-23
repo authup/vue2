@@ -15,7 +15,7 @@ import {
     buildFormSubmit,
     buildFormTextarea,
 } from '@vue-layout/utils';
-import { alphaWithUpperNumHyphenUnderScore, initPropertiesFromSource, useHTTPClient } from '../../utils';
+import { initPropertiesFromSource, useHTTPClient } from '../../utils';
 import { useAuthIlingo } from '../../language/singleton';
 import { buildVuelidateTranslator } from '../../language/utils';
 
@@ -56,7 +56,6 @@ Properties
     validations: {
         form: {
             name: {
-                alphaWithUpperNumHyphenUnderScore,
                 required,
                 minLength: minLength(3),
                 maxLength: maxLength(128),
@@ -146,33 +145,6 @@ Properties
             },
         });
 
-        let nameHint = h();
-
-        if (!this.isEditing) {
-            nameHint = h('div', {
-                staticClass: 'mb-3',
-            }, [
-                h('button', {
-                    staticClass: 'btn btn-xs',
-                    class: {
-                        'btn-dark': this.isNameEmpty,
-                        'btn-warning': !this.isNameEmpty,
-                    },
-                    on: {
-                        click($event: any) {
-                            $event.preventDefault();
-
-                            vm.generateName.call(null);
-                        },
-                    },
-                }, [
-                    h('i', { staticClass: 'fa fa-wrench' }),
-                    ' ',
-                    'Generate',
-                ]),
-            ]);
-        }
-
         const description = buildFormTextarea<Realm>(this, h, {
             validationTranslator: buildVuelidateTranslator(vm.translatorLocale),
             title: 'Description',
@@ -197,7 +169,6 @@ Properties
             },
         }, [
             name,
-            nameHint,
             h('hr'),
             description,
             h('hr'),
