@@ -62,7 +62,7 @@
         "bootstrap-vue": "^2.22.0",
         "cross-env": "^7.0.3",
         "eslint": "^8.34.0",
-        "ilingo": "^2.0.4",
+        "ilingo": "^2.2.1",
         "np": "^7.6.3",
         "rapiq": "^0.8.0",
         "rimraf": "^4.1.2",
