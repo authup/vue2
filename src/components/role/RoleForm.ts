@@ -5,12 +5,12 @@
  * view the LICENSE file that was distributed with this source code.
  */
 
-import Vue, { CreateElement, PropType, VNode } from 'vue';
+import type { CreateElement, PropType, VNode } from 'vue';
+import Vue from 'vue';
 import { maxLength, minLength, required } from 'vuelidate/lib/validators';
-import { Role } from '@authup/common';
-import {
-    ComponentFormData, ComponentFormMethods, buildFormInput, buildFormSubmit, buildFormTextarea,
-} from '@vue-layout/utils';
+import type { Role } from '@authup/common';
+import type { ComponentFormData, ComponentFormMethods } from '@vue-layout/utils';
+import { buildFormInput, buildFormSubmit, buildFormTextarea } from '@vue-layout/utils';
 import { useHTTPClient } from '../../utils';
 import { initPropertiesFromSource } from '../../utils/proprety';
 import { useAuthIlingo } from '../../language/singleton';

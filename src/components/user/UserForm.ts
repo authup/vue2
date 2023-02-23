@@ -8,14 +8,18 @@
 import {
     email, maxLength, minLength, required,
 } from 'vuelidate/lib/validators';
-import Vue, {
+import type {
     CreateElement, PropType, VNode, VNodeData,
 } from 'vue';
+import Vue from 'vue';
 
-import { Realm, User } from '@authup/common';
-import {
+import type { Realm, User } from '@authup/common';
+import type {
     ComponentFormData, ComponentFormMethods,
-    ComponentListItemSlotProps, SlotName, buildFormInput, buildFormSubmit, buildListItemToggleAction,
+    ComponentListItemSlotProps,
+} from '@vue-layout/utils';
+import {
+    SlotName, buildFormInput, buildFormSubmit, buildListItemToggleAction,
 } from '@vue-layout/utils';
 import { useHTTPClient } from '../../utils';
 import { initPropertiesFromSource } from '../../utils/proprety';

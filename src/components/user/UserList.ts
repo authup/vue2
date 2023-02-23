@@ -6,18 +6,21 @@
  */
 
 import { merge } from 'smob';
-import Vue, {
+import type {
     CreateElement, PropType, VNode,
 } from 'vue';
-import { BuildInput } from 'rapiq';
-import { User } from '@authup/common';
-import {
+import Vue from 'vue';
+import type { BuildInput } from 'rapiq';
+import type { User } from '@authup/common';
+import type {
     ComponentListData,
     ComponentListHandlerMethodOptions,
     ComponentListMethods,
     ComponentListProperties,
-    Pagination,
     PaginationMeta,
+} from '@vue-layout/utils';
+import {
+    Pagination,
     buildListHeader,
     buildListItems,
     buildListNoMore,

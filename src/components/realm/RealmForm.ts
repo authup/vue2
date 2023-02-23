@@ -7,10 +7,12 @@
 import {
     maxLength, minLength, required,
 } from 'vuelidate/lib/validators';
-import Vue, { CreateElement, PropType, VNode } from 'vue';
-import { REALM_MASTER_NAME, Realm, createNanoID } from '@authup/common';
+import type { CreateElement, PropType, VNode } from 'vue';
+import Vue from 'vue';
+import type { Realm } from '@authup/common';
+import { REALM_MASTER_NAME, createNanoID } from '@authup/common';
+import type { ComponentFormData } from '@vue-layout/utils';
 import {
-    ComponentFormData,
     buildFormInput,
     buildFormSubmit,
     buildFormTextarea,

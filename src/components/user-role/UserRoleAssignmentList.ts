@@ -5,11 +5,13 @@
  * view the LICENSE file that was distributed with this source code.
  */
 
-import Vue, { CreateElement, VNode } from 'vue';
-import { Role } from '@authup/common';
+import type { CreateElement, VNode } from 'vue';
+import Vue from 'vue';
+import type { Role } from '@authup/common';
 import { SlotName } from '@vue-layout/utils';
 import { RoleList } from '../role';
-import { UserRoleAssignmentListItemActions, UserRoleListItemActionsProperties } from './UserRoleAssignmentListItemActions';
+import type { UserRoleListItemActionsProperties } from './UserRoleAssignmentListItemActions';
+import { UserRoleAssignmentListItemActions } from './UserRoleAssignmentListItemActions';
 
 export type Properties = {
     [key: string]: any;

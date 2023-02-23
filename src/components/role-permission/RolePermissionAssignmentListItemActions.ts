@@ -5,9 +5,10 @@
  * view the LICENSE file that was distributed with this source code.
  */
 
-import Vue, { CreateElement, PropType, VNode } from 'vue';
-import { RolePermission } from '@authup/common';
-import { ComponentListItemData } from '@vue-layout/utils';
+import type { CreateElement, PropType, VNode } from 'vue';
+import Vue from 'vue';
+import type { RolePermission } from '@authup/common';
+import type { ComponentListItemData } from '@vue-layout/utils';
 import { useHTTPClient } from '../../utils';
 
 export type RolePermissionListItemActionsProperties = {

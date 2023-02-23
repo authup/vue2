@@ -8,11 +8,13 @@
 import {
     maxLength, minLength, required, sameAs,
 } from 'vuelidate/lib/validators';
-import Vue, {
+import type {
     CreateElement, VNode, VNodeData,
 } from 'vue';
-import { User } from '@authup/common';
-import { ComponentFormData, buildFormInput, buildFormSubmit } from '@vue-layout/utils';
+import Vue from 'vue';
+import type { User } from '@authup/common';
+import type { ComponentFormData } from '@vue-layout/utils';
+import { buildFormInput, buildFormSubmit } from '@vue-layout/utils';
 import { useHTTPClient } from '../../utils';
 import { useAuthIlingo } from '../../language/singleton';
 import { buildVuelidateTranslator } from '../../language/utils';

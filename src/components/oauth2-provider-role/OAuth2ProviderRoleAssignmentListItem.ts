@@ -6,9 +6,11 @@
  */
 
 import { maxLength, minLength, required } from 'vuelidate/lib/validators';
-import Vue, { CreateElement, PropType, VNode } from 'vue';
-import { IdentityProviderRole, Role } from '@authup/common';
-import { ComponentFormData, buildFormInput } from '@vue-layout/utils';
+import type { CreateElement, PropType, VNode } from 'vue';
+import Vue from 'vue';
+import type { IdentityProviderRole, Role } from '@authup/common';
+import type { ComponentFormData } from '@vue-layout/utils';
+import { buildFormInput } from '@vue-layout/utils';
 import { useHTTPClient } from '../../utils';
 
 export type OAuth2ProviderRoleListItemProperties = {

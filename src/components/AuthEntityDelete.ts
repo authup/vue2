@@ -6,10 +6,11 @@
  */
 
 import { merge } from 'smob';
-import Vue, {
+import type {
     CreateElement, PropType, VNode, VNodeData,
 } from 'vue';
-import { BvMsgBoxData, BvMsgBoxOptions } from 'bootstrap-vue';
+import Vue from 'vue';
+import type { BvMsgBoxData, BvMsgBoxOptions } from 'bootstrap-vue';
 import { useHTTPClientAPI } from '@authup/common';
 import { useHTTPClient } from '../utils';
 import { useAuthIlingo } from '../language/singleton';

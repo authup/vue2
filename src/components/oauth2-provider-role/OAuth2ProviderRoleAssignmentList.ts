@@ -5,10 +5,12 @@
  * view the LICENSE file that was distributed with this source code.
  */
 
-import Vue, { CreateElement, VNode } from 'vue';
-import { Role } from '@authup/common';
+import type { CreateElement, VNode } from 'vue';
+import Vue from 'vue';
+import type { Role } from '@authup/common';
 import { SlotName } from '@vue-layout/utils';
-import { OAuth2ProviderRoleAssignmentListItem, OAuth2ProviderRoleListItemProperties } from './OAuth2ProviderRoleAssignmentListItem';
+import type { OAuth2ProviderRoleListItemProperties } from './OAuth2ProviderRoleAssignmentListItem';
+import { OAuth2ProviderRoleAssignmentListItem } from './OAuth2ProviderRoleAssignmentListItem';
 import { RoleList } from '../role';
 
 type OAuth2ProviderRoleListProperties = {

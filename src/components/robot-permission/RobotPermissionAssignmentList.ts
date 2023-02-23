@@ -5,12 +5,13 @@
  * view the LICENSE file that was distributed with this source code.
  */
 
-import Vue, { CreateElement, VNode } from 'vue';
-import { Permission } from '@authup/common';
+import type { CreateElement, VNode } from 'vue';
+import Vue from 'vue';
+import type { Permission } from '@authup/common';
 import { SlotName } from '@vue-layout/utils';
+import type { RobotPermissionListItemActionsProperties } from './RobotPermissionAssignmentListItemActions';
 import {
     RobotPermissionAssignmentListItemActions,
-    RobotPermissionListItemActionsProperties,
 } from './RobotPermissionAssignmentListItemActions';
 import { PermissionList } from '../permission';
 

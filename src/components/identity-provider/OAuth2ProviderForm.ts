@@ -5,14 +5,18 @@
  * view the LICENSE file that was distributed with this source code.
  */
 
-import Vue, {
+import type {
     CreateElement, PropType, VNode, VNodeData,
 } from 'vue';
+import Vue from 'vue';
 import { maxLength, minLength, required } from 'vuelidate/lib/validators';
-import { IdentityProviderProtocol, OAuth2IdentityProvider, createNanoID } from '@authup/common';
-import {
+import type { OAuth2IdentityProvider } from '@authup/common';
+import { IdentityProviderProtocol, createNanoID } from '@authup/common';
+import type {
     ComponentFormData,
     ComponentFormMethods,
+} from '@vue-layout/utils';
+import {
     buildFormInput,
     buildFormSubmit,
 } from '@vue-layout/utils';

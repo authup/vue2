@@ -5,12 +5,14 @@
  * view the LICENSE file that was distributed with this source code.
  */
 
-import { CreateElement, VNode } from 'vue';
-import { Realm } from '@authup/common';
-import {
+import type { CreateElement, VNode } from 'vue';
+import type { Realm } from '@authup/common';
+import type {
     ComponentFormComputed,
-    ComponentFormData, ComponentFormMethods, ComponentFormVuelidate, ComponentListData,
-    FormGroup, FormGroupProperties, FormGroupSlotScope, SlotName,
+    ComponentFormData, ComponentFormMethods, ComponentFormVuelidate, ComponentListData, FormGroupProperties, FormGroupSlotScope,
+} from '@vue-layout/utils';
+import {
+    FormGroup, SlotName,
 } from '@vue-layout/utils';
 import { RealmList } from '../RealmList';
 import { useAuthIlingo } from '../../../language/singleton';

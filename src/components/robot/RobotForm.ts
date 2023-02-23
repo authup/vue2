@@ -5,15 +5,18 @@
  * view the LICENSE file that was distributed with this source code.
  */
 
-import Vue, {
+import type {
     CreateElement, PropType, VNode,
 } from 'vue';
+import Vue from 'vue';
 import {
     maxLength, minLength, required,
 } from 'vuelidate/lib/validators';
-import { Realm, Robot, createNanoID } from '@authup/common';
+import type { Realm, Robot } from '@authup/common';
+import { createNanoID } from '@authup/common';
+import type { ComponentFormData, ComponentListItemSlotProps } from '@vue-layout/utils';
 import {
-    ComponentFormData, ComponentListItemSlotProps, SlotName, buildFormInput, buildFormSubmit, buildListItemToggleAction,
+    SlotName, buildFormInput, buildFormSubmit, buildListItemToggleAction,
 } from '@vue-layout/utils';
 import {
     useHTTPClient,

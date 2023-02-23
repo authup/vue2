@@ -5,16 +5,19 @@
  * view the LICENSE file that was distributed with this source code.
  */
 import { merge } from 'smob';
-import Vue, { CreateElement, PropType, VNode } from 'vue';
-import { Permission } from '@authup/common';
-import { BuildInput } from 'rapiq';
-import {
+import type { CreateElement, PropType, VNode } from 'vue';
+import Vue from 'vue';
+import type { Permission } from '@authup/common';
+import type { BuildInput } from 'rapiq';
+import type {
     ComponentListData,
     ComponentListHandlerMethodOptions,
     ComponentListMethods,
     ComponentListProperties,
-    Pagination,
     PaginationMeta,
+} from '@vue-layout/utils';
+import {
+    Pagination,
     buildListHeader,
     buildListItems,
     buildListNoMore,

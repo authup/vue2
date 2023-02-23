@@ -1,10 +1,11 @@
 import 'regenerator-runtime';
 
-import Vue, { Component, PluginFunction } from 'vue';
+import type { Component, PluginFunction } from 'vue';
+import type Vue from 'vue';
 
 // Import vue components
 import * as components from './components';
-import { InstallOptions } from './type';
+import type { InstallOptions } from './type';
 import { setHTTPClient } from './utils';
 
 export { setHTTPClient, useHTTPClient } from './utils';
