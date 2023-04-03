@@ -9,7 +9,7 @@ import { merge } from 'smob';
 import type { CreateElement, PropType, VNode } from 'vue';
 import Vue from 'vue';
 import type { BuildInput } from 'rapiq';
-import type { IdentityProvider, OAuth2IdentityProvider } from '@authup/common';
+import type { IdentityProvider, OAuth2IdentityProvider } from '@authup/core';
 import type {
     ComponentListData,
     ComponentListHandlerMethodOptions,
@@ -26,7 +26,7 @@ import {
     buildListSearch,
 } from '@vue-layout/utils';
 import {
-    useHTTPClient,
+    useAPIClient,
 } from '../../utils';
 
 type Properties = ComponentListProperties<BuildInput<IdentityProvider>> & {
@@ -116,7 +116,7 @@ Properties
             this.busy = true;
 
             try {
-                const response = await useHTTPClient().identityProvider.getMany(merge({
+                const response = await useAPIClient().identityProvider.getMany(merge({
                     page: {
                         limit: this.meta.limit,
                         offset: this.meta.offset,

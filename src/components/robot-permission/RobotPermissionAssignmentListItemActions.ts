@@ -7,9 +7,9 @@
 
 import type { CreateElement, PropType, VNode } from 'vue';
 import Vue from 'vue';
-import type { RobotPermission } from '@authup/common';
+import type { RobotPermission } from '@authup/core';
 import type { ComponentListItemData } from '@vue-layout/utils';
-import { useHTTPClient } from '../../utils';
+import { useAPIClient } from '../../utils';
 
 export type RobotPermissionListItemActionsProperties = {
     items?: RobotPermission[],
@@ -59,7 +59,7 @@ RobotPermissionListItemActionsProperties
         },
         async init() {
             try {
-                const response = await useHTTPClient().robotPermission.getMany({
+                const response = await useAPIClient().robotPermission.getMany({
                     filters: {
                         robot_id: this.robotId,
                         permission_id: this.permissionId,
@@ -86,7 +86,7 @@ RobotPermissionListItemActionsProperties
             this.busy = true;
 
             try {
-                const item = await useHTTPClient().robotPermission.create({
+                const item = await useAPIClient().robotPermission.create({
                     robot_id: this.robotId,
                     permission_id: this.permissionId,
                 });
@@ -108,7 +108,7 @@ RobotPermissionListItemActionsProperties
             this.busy = true;
 
             try {
-                const item = await useHTTPClient().robotPermission.delete(this.item.id);
+                const item = await useAPIClient().robotPermission.delete(this.item.id);
 
                 this.item = null;
 

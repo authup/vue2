@@ -7,8 +7,8 @@
 
 import type { CreateElement, VNode } from 'vue';
 import Vue from 'vue';
-import type { Permission } from '@authup/common';
-import { Role } from '@authup/common';
+import type { Permission } from '@authup/core';
+import { Role } from '@authup/core';
 import { SlotName } from '@vue-layout/utils';
 import type { RolePermissionListItemActionsProperties } from './RolePermissionAssignmentListItemActions';
 import {

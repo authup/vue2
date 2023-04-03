@@ -8,10 +8,10 @@
 import type { CreateElement, PropType, VNode } from 'vue';
 import Vue from 'vue';
 import { maxLength, minLength, required } from 'vuelidate/lib/validators';
-import type { Permission } from '@authup/common';
+import type { Permission } from '@authup/core';
 import type { ComponentFormData } from '@vue-layout/utils';
 import { buildFormInput, buildFormSubmit, buildFormTextarea } from '@vue-layout/utils';
-import { initPropertiesFromSource, useHTTPClient } from '../../utils';
+import { initPropertiesFromSource, useAPIClient } from '../../utils';
 import { useAuthIlingo } from '../../language/singleton';
 import { buildVuelidateTranslator } from '../../language/utils';
 
@@ -95,10 +95,10 @@ export const PermissionForm = Vue.extend<ComponentFormData<Permission>, any, any
                 let response;
 
                 if (this.isEditing) {
-                    response = await useHTTPClient().permission.update(this.entityProperty.id, this.form);
+                    response = await useAPIClient().permission.update(this.entityProperty.id, this.form);
                     this.$emit('updated', response);
                 } else {
-                    response = await useHTTPClient().permission.create(this.form);
+                    response = await useAPIClient().permission.create(this.form);
                     this.$emit('created', response);
                 }
             } catch (e) {

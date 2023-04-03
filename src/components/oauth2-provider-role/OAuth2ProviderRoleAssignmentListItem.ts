@@ -8,10 +8,10 @@
 import { maxLength, minLength, required } from 'vuelidate/lib/validators';
 import type { CreateElement, PropType, VNode } from 'vue';
 import Vue from 'vue';
-import type { IdentityProviderRole, Role } from '@authup/common';
+import type { IdentityProviderRole, Role } from '@authup/core';
 import type { ComponentFormData } from '@vue-layout/utils';
 import { buildFormInput } from '@vue-layout/utils';
-import { useHTTPClient } from '../../utils';
+import { useAPIClient } from '../../utils';
 
 export type OAuth2ProviderRoleListItemProperties = {
     [key: string]: any;
@@ -94,7 +94,7 @@ OAuth2ProviderRoleListItemProperties
             this.loaded = false;
 
             try {
-                const { data } = await useHTTPClient().identityProviderRole.getMany({
+                const { data } = await useAPIClient().identityProviderRole.getMany({
                     filter: {
                         role_id: this.role.id,
                         provider_id: this.entityId,
@@ -123,13 +123,13 @@ OAuth2ProviderRoleListItemProperties
                 let response;
 
                 if (this.item) {
-                    response = await useHTTPClient().identityProviderRole.update(this.item.id, {
+                    response = await useAPIClient().identityProviderRole.update(this.item.id, {
                         ...this.form,
                     });
 
                     this.$emit('updated', response);
                 } else {
-                    response = await useHTTPClient().identityProviderRole.create({
+                    response = await useAPIClient().identityProviderRole.create({
                         ...this.form,
                         role_id: this.role.id,
                         provider_id: this.entityId,
@@ -153,7 +153,7 @@ OAuth2ProviderRoleListItemProperties
             this.busy = true;
 
             try {
-                const response = await useHTTPClient().identityProviderRole.delete(this.item.id);
+                const response = await useAPIClient().identityProviderRole.delete(this.item.id);
 
                 this.item = null;
 

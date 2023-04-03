@@ -10,8 +10,8 @@ import type {
 } from 'vue';
 import Vue from 'vue';
 import { maxLength, minLength, required } from 'vuelidate/lib/validators';
-import type { OAuth2IdentityProvider } from '@authup/common';
-import { IdentityProviderProtocol, createNanoID } from '@authup/common';
+import type { OAuth2IdentityProvider } from '@authup/core';
+import { IdentityProviderProtocol, createNanoID } from '@authup/core';
 import type {
     ComponentFormData,
     ComponentFormMethods,
@@ -20,7 +20,7 @@ import {
     buildFormInput,
     buildFormSubmit,
 } from '@vue-layout/utils';
-import { alphaNumHyphenUnderscore, initPropertiesFromSource, useHTTPClient } from '../../utils';
+import { alphaNumHyphenUnderscore, initPropertiesFromSource, useAPIClient } from '../../utils';
 import { OAuth2ProviderRoleAssignmentList } from '../oauth2-provider-role';
 import { buildRealmSelectForm } from '../realm/render/select';
 import { useAuthIlingo } from '../../language/singleton';
@@ -178,11 +178,11 @@ Properties
                 let response;
 
                 if (this.isEditing) {
-                    response = await useHTTPClient().identityProvider.update(this.entity.id, this.form);
+                    response = await useAPIClient().identityProvider.update(this.entity.id, this.form);
 
                     this.$emit('updated', response);
                 } else {
-                    response = await useHTTPClient().identityProvider.create(this.form);
+                    response = await useAPIClient().identityProvider.create(this.form);
 
                     this.$emit('created', response);
                 }

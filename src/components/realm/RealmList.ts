@@ -8,7 +8,7 @@
 import { merge } from 'smob';
 import type { CreateElement, PropType, VNode } from 'vue';
 import Vue from 'vue';
-import type { Realm } from '@authup/common';
+import type { Realm } from '@authup/core';
 import type { BuildInput } from 'rapiq';
 import type {
     ComponentListData,
@@ -23,7 +23,7 @@ import {
     buildListPagination,
     buildListSearch,
 } from '@vue-layout/utils';
-import { useHTTPClient } from '../../utils';
+import { useAPIClient } from '../../utils';
 
 export const RealmList = Vue.extend<
 ComponentListData<Realm>,
@@ -105,7 +105,7 @@ ComponentListProperties<BuildInput<Realm>>
             this.busy = true;
 
             try {
-                const response = await useHTTPClient().realm.getMany(merge({
+                const response = await useAPIClient().realm.getMany(merge({
                     page: {
                         limit: this.meta.limit,
                         offset: this.meta.offset,

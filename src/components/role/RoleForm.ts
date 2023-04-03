@@ -8,10 +8,10 @@
 import type { CreateElement, PropType, VNode } from 'vue';
 import Vue from 'vue';
 import { maxLength, minLength, required } from 'vuelidate/lib/validators';
-import type { Role } from '@authup/common';
+import type { Role } from '@authup/core';
 import type { ComponentFormData, ComponentFormMethods } from '@vue-layout/utils';
 import { buildFormInput, buildFormSubmit, buildFormTextarea } from '@vue-layout/utils';
-import { useHTTPClient } from '../../utils';
+import { useAPIClient } from '../../utils';
 import { initPropertiesFromSource } from '../../utils/proprety';
 import { useAuthIlingo } from '../../language/singleton';
 import { buildVuelidateTranslator } from '../../language/utils';
@@ -100,11 +100,11 @@ Properties
                 let response;
 
                 if (this.isEditing) {
-                    response = await useHTTPClient().role.update(this.entity.id, this.form);
+                    response = await useAPIClient().role.update(this.entity.id, this.form);
 
                     this.$emit('updated', response);
                 } else {
-                    response = await useHTTPClient().role.create(this.form);
+                    response = await useAPIClient().role.create(this.form);
 
                     this.$emit('created', response);
                 }

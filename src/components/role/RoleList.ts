@@ -9,7 +9,7 @@ import { merge } from 'smob';
 import type { CreateElement, PropType, VNode } from 'vue';
 import Vue from 'vue';
 import type { BuildInput } from 'rapiq';
-import type { Role } from '@authup/common';
+import type { Role } from '@authup/core';
 import type {
     ComponentListData,
     ComponentListHandlerMethodOptions,
@@ -24,7 +24,7 @@ import {
     buildListNoMore,
     buildListPagination, buildListSearch,
 } from '@vue-layout/utils';
-import { useHTTPClient } from '../../utils';
+import { useAPIClient } from '../../utils';
 
 export const RoleList = Vue.extend<
 ComponentListData<Role>,
@@ -106,7 +106,7 @@ ComponentListProperties<BuildInput<Role>>
             this.busy = true;
 
             try {
-                const response = await useHTTPClient().role.getMany(merge({
+                const response = await useAPIClient().role.getMany(merge({
                     page: {
                         limit: this.meta.limit,
                         offset: this.meta.offset,

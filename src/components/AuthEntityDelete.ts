@@ -11,8 +11,8 @@ import type {
 } from 'vue';
 import Vue from 'vue';
 import type { BvMsgBoxData, BvMsgBoxOptions } from 'bootstrap-vue';
-import { useHTTPClientAPI } from '@authup/common';
-import { useHTTPClient } from '../utils';
+import { useHTTPClientAPI } from '@authup/core';
+import { useAPIClient } from '../utils';
 import { useAuthIlingo } from '../language/singleton';
 
 enum ElementType {
@@ -83,7 +83,7 @@ AuthEntityDeleteProperties
         async delete() {
             if (this.busy) return;
 
-            const domainApi = useHTTPClientAPI(useHTTPClient(), this.entityType);
+            const domainApi = useHTTPClientAPI(useAPIClient(), this.entityType);
             if (!domainApi) {
                 return;
             }

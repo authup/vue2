@@ -11,7 +11,7 @@ import type {
 } from 'vue';
 import Vue from 'vue';
 import type { BuildInput } from 'rapiq';
-import type { User } from '@authup/common';
+import type { User } from '@authup/core';
 import type {
     ComponentListData,
     ComponentListHandlerMethodOptions,
@@ -27,7 +27,7 @@ import {
     buildListPagination,
     buildListSearch,
 } from '@vue-layout/utils';
-import { useHTTPClient } from '../../utils';
+import { useAPIClient } from '../../utils';
 
 export const UserList = Vue.extend<
 ComponentListData<User>,
@@ -107,7 +107,7 @@ ComponentListProperties<BuildInput<User>>
             this.busy = true;
 
             try {
-                const response = await useHTTPClient().user.getMany(merge({
+                const response = await useAPIClient().user.getMany(merge({
                     include: {
                         realm: true,
                     },

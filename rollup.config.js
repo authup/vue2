@@ -1,5 +1,5 @@
 // rollup.config.js
-import fs from 'fs';
+import fs from 'node:fs';
 
 import vue from 'rollup-plugin-vue2';
 import commonjs from '@rollup/plugin-commonjs';
@@ -19,7 +19,7 @@ const includePathOptions = {
         vue: 'node_modules/vue/dist/vue.common.js',
     },
     external: [
-        '@authup/common',
+        '@authup/core',
         'ilingo',
         'rapiq',
         'vue',
@@ -68,7 +68,7 @@ const baseConfig = {
 const external = [
     // list external dependencies, exactly the way it is written in the import statement.
     // eg. 'jquery'
-    '@authup/common',
+    '@authup/core',
     'ilingo',
     'rapiq',
     'vue',

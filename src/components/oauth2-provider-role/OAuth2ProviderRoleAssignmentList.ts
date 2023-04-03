@@ -7,7 +7,7 @@
 
 import type { CreateElement, VNode } from 'vue';
 import Vue from 'vue';
-import type { Role } from '@authup/common';
+import type { Role } from '@authup/core';
 import { SlotName } from '@vue-layout/utils';
 import type { OAuth2ProviderRoleListItemProperties } from './OAuth2ProviderRoleAssignmentListItem';
 import { OAuth2ProviderRoleAssignmentListItem } from './OAuth2ProviderRoleAssignmentListItem';

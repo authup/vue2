@@ -7,7 +7,7 @@
 
 import type { CreateElement, VNode } from 'vue';
 import Vue from 'vue';
-import type { Permission } from '@authup/common';
+import type { Permission } from '@authup/core';
 import { SlotName } from '@vue-layout/utils';
 import type { RobotPermissionListItemActionsProperties } from './RobotPermissionAssignmentListItemActions';
 import {

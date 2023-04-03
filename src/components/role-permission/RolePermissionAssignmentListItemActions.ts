@@ -7,9 +7,9 @@
 
 import type { CreateElement, PropType, VNode } from 'vue';
 import Vue from 'vue';
-import type { RolePermission } from '@authup/common';
+import type { RolePermission } from '@authup/core';
 import type { ComponentListItemData } from '@vue-layout/utils';
-import { useHTTPClient } from '../../utils';
+import { useAPIClient } from '../../utils';
 
 export type RolePermissionListItemActionsProperties = {
     items?: RolePermission[],
@@ -56,7 +56,7 @@ ComponentListItemData<RolePermission>, any, any, RolePermissionListItemActionsPr
         },
         async init() {
             try {
-                const response = await useHTTPClient().rolePermission.getMany({
+                const response = await useAPIClient().rolePermission.getMany({
                     filters: {
                         role_id: this.roleId,
                         permission_id: this.permissionId,
@@ -83,7 +83,7 @@ ComponentListItemData<RolePermission>, any, any, RolePermissionListItemActionsPr
             this.busy = true;
 
             try {
-                const item = await useHTTPClient().rolePermission.create({
+                const item = await useAPIClient().rolePermission.create({
                     role_id: this.roleId,
                     permission_id: this.permissionId,
                 });
@@ -105,7 +105,7 @@ ComponentListItemData<RolePermission>, any, any, RolePermissionListItemActionsPr
             this.busy = true;
 
             try {
-                const item = await useHTTPClient().rolePermission.delete(this.item.id);
+                const item = await useAPIClient().rolePermission.delete(this.item.id);
 
                 this.item = null;
 

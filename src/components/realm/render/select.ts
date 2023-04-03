@@ -6,7 +6,7 @@
  */
 
 import type { CreateElement, VNode } from 'vue';
-import type { Realm } from '@authup/common';
+import type { Realm } from '@authup/core';
 import type {
     ComponentFormComputed,
     ComponentFormData, ComponentFormMethods, ComponentFormVuelidate, ComponentListData, FormGroupProperties, FormGroupSlotScope,

@@ -7,9 +7,9 @@
 
 import type { CreateElement, PropType, VNode } from 'vue';
 import Vue from 'vue';
-import type { UserRole } from '@authup/common';
+import type { UserRole } from '@authup/core';
 import type { ComponentListItemData } from '@vue-layout/utils';
-import { useHTTPClient } from '../../utils';
+import { useAPIClient } from '../../utils';
 
 export type UserRoleListItemActionsProperties = {
     items?: UserRole[],
@@ -54,7 +54,7 @@ export const UserRoleAssignmentListItemActions = Vue.extend<ComponentListItemDat
         },
         async init() {
             try {
-                const response = await useHTTPClient().userRole.getMany({
+                const response = await useAPIClient().userRole.getMany({
                     filters: {
                         role_id: this.roleId,
                         user_id: this.userId,
@@ -79,7 +79,7 @@ export const UserRoleAssignmentListItemActions = Vue.extend<ComponentListItemDat
             this.busy = true;
 
             try {
-                const userRole = await useHTTPClient().userRole.create({
+                const userRole = await useAPIClient().userRole.create({
                     role_id: this.roleId,
                     user_id: this.userId,
                 });
@@ -101,7 +101,7 @@ export const UserRoleAssignmentListItemActions = Vue.extend<ComponentListItemDat
             this.busy = true;
 
             try {
-                const userRole = await useHTTPClient().userRole.delete(this.item.id);
+                const userRole = await useAPIClient().userRole.delete(this.item.id);
 
                 this.item = null;
 

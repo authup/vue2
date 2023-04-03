@@ -44,7 +44,7 @@
     },
     "license": "MIT",
     "devDependencies": {
-        "@authup/common": "^0.17.0",
+        "@authup/core": "^0.30.0",
         "@babel/core": "^7.21.3",
         "@babel/preset-env": "^7.20.2",
         "@babel/preset-typescript": "^7.21.0",
@@ -85,7 +85,7 @@
         "smob": "^1.0.0"
     },
     "peerDependencies": {
-        "@authup/common": ">=0.15.0 <1.0.0",
+        "@authup/core": ">=0.30.0 <1.0.0",
         "bootstrap-vue": "^2.x",
         "ilingo": "^2.x",
         "rapiq": ">=0.8.0 <1.0.0",

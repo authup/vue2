@@ -12,10 +12,10 @@ import type {
     CreateElement, VNode, VNodeData,
 } from 'vue';
 import Vue from 'vue';
-import type { User } from '@authup/common';
+import type { User } from '@authup/core';
 import type { ComponentFormData } from '@vue-layout/utils';
 import { buildFormInput, buildFormSubmit } from '@vue-layout/utils';
-import { useHTTPClient } from '../../utils';
+import { useAPIClient } from '../../utils';
 import { useAuthIlingo } from '../../language/singleton';
 import { buildVuelidateTranslator } from '../../language/utils';
 
@@ -76,7 +76,7 @@ export const UserPasswordForm = Vue.extend<ComponentFormData<User>, any, any, Pr
             this.busy = true;
 
             try {
-                const user = await useHTTPClient().user.update(this.id, {
+                const user = await useAPIClient().user.update(this.id, {
                     password: this.form.password,
                     password_repeat: this.form.password_repeat,
                 });
