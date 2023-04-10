@@ -65,7 +65,7 @@
         "ilingo": "^2.4.0",
         "np": "^7.7.0",
         "rapiq": "^0.8.0",
-        "rimraf": "^4.4.1",
+        "rimraf": "^5.0.0",
         "rollup": "^2.79.0",
         "rollup-plugin-includepaths": "^0.2.4",
         "rollup-plugin-postcss": "^4.0.2",
