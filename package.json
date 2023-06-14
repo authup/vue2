@@ -44,7 +44,7 @@
     },
     "license": "MIT",
     "devDependencies": {
-        "@authup/core": "^0.32.0",
+        "@authup/core": "^0.37.1",
         "@babel/core": "^7.21.4",
         "@babel/preset-env": "^7.21.4",
         "@babel/preset-typescript": "^7.21.4",
