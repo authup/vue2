@@ -91,5 +91,8 @@
         "rapiq": ">=0.8.0 <1.0.0",
         "vue": "^2.x",
         "vuelidate": "^0.x"
+    },
+    "overrides": {
+        "browserslist": "4.28.7"
     }
 }
